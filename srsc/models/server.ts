@@ -1,4 +1,5 @@
 import express, {Application, Request, Response} from 'express';
+import cors from 'cors';
 import routeProduct from '../routes/product_route';
 import db from '../db/connection';
 
@@ -36,6 +37,9 @@ class Server {
     midlewares(){
         //Parseamos el body
         this.app.use(express.json());
+
+        //Cors
+        this.app.use(cors());
     }
 
 
